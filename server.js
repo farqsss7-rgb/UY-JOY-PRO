@@ -7,6 +7,7 @@ const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
 const DB_FILE = process.env.UYJOY_DATA_FILE || path.join(DATA_DIR, 'database.json');
 const PORT = Number(process.env.PORT || 3000);
+const HOST = process.env.HOST || '0.0.0.0';
 const sessions = new Map();
 const COOKIE = 'uyjoy_session';
 
@@ -216,4 +217,4 @@ async function route(req, res) {
   return send(res, 404, 'Sahifa topilmadi.', { 'Content-Type': 'text/plain; charset=utf-8' });
 }
 const server = http.createServer((req, res) => { route(req, res).catch(err => { console.error(err.message); if (!res.headersSent) send(res, 500, { error: 'Server xatosi.' }); else res.destroy(); }); });
-server.listen(PORT, '127.0.0.1', () => console.log(`UY-JOY PRO tayyor: http://127.0.0.1:${PORT}`));
+server.listen(PORT, HOST, () => console.log(`UY-JOY PRO tayyor: http://${HOST}:${PORT}`));
