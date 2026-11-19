@@ -1,0 +1,8 @@
+{
+  "name": "uy-joy-pro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Uy-joy boshqaruvi SaaS platformasi",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" }
+}

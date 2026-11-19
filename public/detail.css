@@ -1,0 +1,50 @@
+.modal-backdrop .modal {
+    position: relative;
+    z-index: 2
+}
+
+.modal-backdrop .backdrop-hit {
+    position: absolute;
+    inset: 0;
+    z-index: 0
+}
+
+.modal-backdrop>#modal-form {
+    z-index: 2
+}
+
+.editor-sidebar {
+    max-height: calc(100vh - 160px);
+    overflow: auto
+}
+
+.editor-controls {
+    margin-bottom: 8px
+}
+
+.tool-btn {
+    user-select: none
+}
+
+.login-art .brand,
+.sidebar .brand {
+    line-height: 1.2
+}
+
+.chart-wrap {
+    min-height: 185px
+}
+
+@media(max-width:850px) {
+    .editor-sidebar {
+        max-height: none
+    }
+
+    .editor-sidebar .editor-controls {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .editor-sidebar .editor-controls>label:first-child {
+        grid-column: 1/-1
+    }
+}
